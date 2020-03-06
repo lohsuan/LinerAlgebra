@@ -1,5 +1,10 @@
-bin/matrix_cal_a: ./matrix_cal_a.c
-	g++ matrix_cal_a.c -o bin/matrix_cal_a
+all: bin/a_matrix_cal bin/b_matrix_mul bin/c_matrix_inv
 
-bin/matrix_mul_b: ./matrix_mul_b.c
-	g++ matrix_mul_b.c -o bin/matrix_mul_b
+bin/a_matrix_cal: seperate_task/a_matrix_cal.c
+	g++ seperate_task/a_matrix_cal.c -o bin/a_matrix_cal
+
+bin/b_matrix_mul: seperate_task/b_matrix_mul.c
+	g++ seperate_task/b_matrix_mul.c -o bin/b_matrix_mul
+
+bin/c_matrix_inv: seperate_task/c_matrix_inv.c
+	g++ seperate_task/c_matrix_inv.c -o bin/c_matrix_inv

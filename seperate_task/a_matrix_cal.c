@@ -1,3 +1,9 @@
+/*////////////////////////////////////////////////
+// Liner algebra class
+// topic : matrix caculate (add, minus, transpose)
+// student ID : 108820001
+// Name : Yu-Hsuan, Lo
+*/////////////////////////////////////////////////
 #include <stdio.h>
 #include <math.h>
 #define PI 3.1415926
@@ -19,15 +25,16 @@ void compute_a3(void);
 void compute_a4(void);
 bool add_test(int, int, int, int);
 void err_mg(void);
-// a. caculate A + 2B, C-E, A's transpose, E's transpose
+
+/* a. caculate A + 2B, C-E, A's transpose, E's transpose */
 int main(){
 	//a1. A +2B
 	if(add_test(a_row, a_col,b_row, b_col)) compute_a1();
-	else errmg();
+	else err_mg();
 
 	//a2. C-E
 	if(add_test(c_row, c_col, e_row, e_col)) compute_a2();
-	else errmg();
+	else err_mg();
 
 	// transpose of A
 	compute_a3();
@@ -36,7 +43,7 @@ int main(){
 
 	return 0;
 }
-bool add_test(int row1,int col1,int row2, int col2 ){
+bool add_test(int row1, int col1, int row2, int col2 ){
 	if((row1==row2) && (col1==col2)) return true;
 	else return false;
 }
@@ -68,7 +75,7 @@ void compute_a2(void) {
 			ans[i][j] = C[i][j] - E[i][j];
 		}
 	}
-	printf("\nAnswer for a2. (C - E): \n");
+	printf("Answer for a2. (C - E): \n");
 	for(i=0 ; i < c_row ; i++){
 		for(j=0 ; j < c_col ; j++){
 			printf("%.3f ", ans[i][j]);
@@ -84,7 +91,7 @@ void compute_a3(void) {
 			ans[j][i] = A[i][j];
 		}
 	}
-	printf("\nAnswer for a3. (A.t): \n");
+	printf("Answer for a3. (A.t): \n");
 	for(i=0 ; i < a_col ; i++){
 		for(j=0 ; j< a_row ; j++){
 			printf("%d ",ans[i][j]);
@@ -100,7 +107,7 @@ void compute_a4(void) {
 			ans[j][i] = E[i][j];
 		}
 	}
-	printf("\nAnswer for a4. (E.t): \n");
+	printf("Answer for a4. (E.t): \n");
 	for(i=0 ; i < e_col ; i++){
 		for(j=0 ; j< e_row ; j++){
 			printf("%.3f ",ans[i][j]);
